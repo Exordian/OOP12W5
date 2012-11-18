@@ -6,5 +6,7 @@
  * 
  */
 public interface Shorter<T> {
-	public boolean shorter(T s);
+	//compares two elements of T;
+	public boolean shorter(T s); 
+	//s != null
 }

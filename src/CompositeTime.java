@@ -13,7 +13,30 @@ public class CompositeTime extends ElapsedTime {
 		this.times = times;
 	}
 
-	// TODO: Shorter missing
+	public boolean shorter(ElapsedTime e) {
+		//e != null; e.getTime() >= 0;
+		double sum = 0;
+		for(int i = 0; i < times.length; i++) {
+			sum += times[i]; 
+		}
+		if(e.getTime() > sum) 
+			return true;
+		return false;
+	}
+	
+	public double getMinValue() {
+		if(times.length == 0) {
+			return -1;
+		}
+		double minval = times[0];
+		for(int i = 1; i < times.length; i++) {
+			if(times[i] < minval) {
+				minval = times[i];
+			}
+		}
+		return minval;
+		//returns minimum value of times-array
+	}
 	
 	@Override
 	public int count() {

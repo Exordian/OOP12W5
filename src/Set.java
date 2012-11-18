@@ -10,6 +10,7 @@ import java.util.NoSuchElementException;
 public class Set<T> implements Iterable<T> {
 
 	protected Node root = null;
+	protected int size = 0;
 	
 	@Override
 	public Iterator<T> iterator() {
@@ -37,16 +38,18 @@ public class Set<T> implements Iterable<T> {
 
 			@Override
 			public void remove() {
-				if(current == null) // emtpy iterator
+				if(current == null) // empty iterator
 					return;
 				
 				Node following = hasNext()? current.getNext() : null;
 				
 				if(prev == null) { // must be root
 					root = following;
+					size--;
 					return;
 				}
 				prev.setNext(following);
+				size--;
 			}
 			
 		};
@@ -58,6 +61,7 @@ public class Set<T> implements Iterable<T> {
 		
 		if(root == null) {
 			root = new Node(i);
+			size++;
 			return;
 		}
 		
@@ -68,7 +72,13 @@ public class Set<T> implements Iterable<T> {
 			cur = cur.getNext();
 		}
 		cur.setNext(new Node(i));
-		
+		size++;
+		//i has been added;
+	}
+	
+	public int size() {
+		return this.size;
+		//returns size
 	}
 
 	
@@ -77,10 +87,12 @@ public class Set<T> implements Iterable<T> {
 		private Node next;
 		
 		public Node(T element) {
+			//element != null;
 			this.element = element;
 		}
 		
 		public void setNext(Node node) {
+			//node != null;
 			this.next = node;
 		}
 

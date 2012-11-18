@@ -6,10 +6,21 @@
  * 
  */
 public abstract class ElapsedTime implements Shorter<ElapsedTime> { // TODO: evtl muss elapsedTime ersetzt werden damit in den erbenden klassen shorter sinnvoll genutzt werden kann
+	
+	protected double time = 0;
+	
+	protected void setTime(double time) {
+		//t >= 0;
+		this.time = time;
+	}
+	protected double getTime() {
+		return this.time;
+	}
 
-	@Override
 	public boolean shorter(ElapsedTime s) {
-		// TODO Auto-generated method stub
+		//s != null; s.getTime() >= 0;
+		if(s.getTime() > this.time)
+			return true;
 		return false;
 	}
     // TODO: muessen wir die klasse irgendwann instanziieren? wenn ja muss abstract weg

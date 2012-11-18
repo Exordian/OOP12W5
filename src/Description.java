@@ -18,6 +18,8 @@ public class Description implements Shorter<Description> {
 		if(s.toString().length() > text.length())
 			return true;
 		return false;
+		//returns: true if length of text s is greater than length of this.text
+		//         else false
 	}
 	
 	public String toString() {
