@@ -13,9 +13,7 @@ public class OrderedSet<T extends Shorter<T>>extends Set<T> implements Iterable<
 	public void insert (T i) {
 		if(i == null)
 			return;
-
-		// TODO: idente elemente werden nicht nochmals eingefuegt, dafuer seh ich auch keine logik
-		
+	
 		if(root == null) {
 			root = new Node(i);
 			size++;
@@ -28,6 +26,9 @@ public class OrderedSet<T extends Shorter<T>>extends Set<T> implements Iterable<
 
 		while(cur.getNext() != null) {
 			if (!cur.getElement().shorter(i)) {
+				if (cur.getElement() == i) {
+					return;
+				}
 				shorter = true;
 				break;
 			}
