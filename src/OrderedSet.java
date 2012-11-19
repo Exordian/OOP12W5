@@ -14,10 +14,11 @@ public class OrderedSet<T extends Shorter<T>>extends Set<T> implements Iterable<
 		if(i == null)
 			return;
 
-		// TODO: Size inkrementieren fehlt, idente elemente werden nicht nochmals eingefuegt, dafür seh ich auch keine logik
+		// TODO: idente elemente werden nicht nochmals eingefuegt, dafuer seh ich auch keine logik
 		
 		if(root == null) {
 			root = new Node(i);
+			size++;
 			return;
 		}
 		
@@ -28,18 +29,19 @@ public class OrderedSet<T extends Shorter<T>>extends Set<T> implements Iterable<
 		while(cur.getNext() != null) {
 			if (!cur.getElement().shorter(i)) {
 				shorter = true;
-				return; // TODO WAT? willst du da wirklich retrurnen oder nur n break?
+				break;
 			}
 			temp = cur;
 			cur = cur.getNext();
 		}
 
-		if (shorter == false) {
-			cur.setNext(new Node(i));
-		} else {
+		if (shorter) {
 			temp.setNext(new Node(i));
 			temp.getNext().setNext(cur);
+		} else {
+			cur.setNext(new Node(i));
 		}
+		size++;
 	}
 }
 
