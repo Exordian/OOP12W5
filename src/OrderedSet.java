@@ -13,35 +13,40 @@ public class OrderedSet<T extends Shorter<T>>extends Set<T> implements Iterable<
 	public void insert (T i) {
 		if(i == null)
 			return;
-	
+
+		if(contains(i))
+			return;
+		
 		if(root == null) {
-			root = new Node(i);
+			root = new Node<T>(i, null, null);
+			size++;
+			return;
+		}
+
+		Node<T> cur = root;
+		
+		if(!cur.getElement().shorter(i)) {
+			root = new Node<T>(i, null, cur);
+			cur.setPrev(root);
 			size++;
 			return;
 		}
 		
-		Node cur = root;
-		Node temp = root;
-		boolean shorter = false;
-
 		while(cur.getNext() != null) {
 			if (!cur.getElement().shorter(i)) {
-				if (cur.getElement() == i) {
-					return;
-				}
-				shorter = true;
+				cur = cur.getPrev();
 				break;
 			}
-			temp = cur;
 			cur = cur.getNext();
 		}
 
-		if (shorter) {
-			temp.setNext(new Node(i));
-			temp.getNext().setNext(cur);
-		} else {
-			cur.setNext(new Node(i));
-		}
+		Node<T> temp = new Node<T>(i, cur, cur.getNext());
+		
+		cur.setNext(temp);
+
+		if(cur.getNext() != null)
+			cur.getNext().setPrev(temp);
+		
 		size++;
 	}
 }

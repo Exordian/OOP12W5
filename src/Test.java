@@ -17,7 +17,7 @@ public class Test {
 		
 		//1.)
 		System.out.println("1.)\n**OrderedSet**");
-		OrderedSet<Description> s = new OrderedSet<Description>();
+		OrderedMap<Description, String> s = new OrderedMap<Description, String>();
 		Description d1 = new Description("abcdefg\nhijklmnop\nqrstuvw\nxyz");
 		Description d2 = new Description("111111111\n222222");
 		Description d3 = new Description("ABC\n123\n987");
@@ -26,10 +26,14 @@ public class Test {
 		s.insert(d2);
 		s.insert(d3);
 		s.insert(d4);
-		Iterator<Description> it1 = s.iterator();
+		OrderedMap.MapIterator<Description, String> it1 = s.iterator();
 		Description d = null;
 		while(it1.hasNext()) {
 			d = it1.next();
+			OrderedMap.MapElementIterator<String> wut = it1.iterator();
+			wut.add("wat");
+			for(String st : it1)
+				System.out.println("lol: " + st);
 			System.out.println(d.toString());
 			System.out.println("Rows: " +d.countRows()+ "\n");
 		}
