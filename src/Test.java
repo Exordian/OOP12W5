@@ -17,7 +17,7 @@ public class Test {
 		
 		//1.)
 		System.out.println("1.)\n**OrderedSet**");
-		OrderedMap<Description, String> s = new OrderedMap<Description, String>();
+		OrderedSet<Description> s = new OrderedSet<Description>();
 		Description d1 = new Description("abcdefg\nhijklmnop\nqrstuvw\nxyz");
 		Description d2 = new Description("111111111\n222222");
 		Description d3 = new Description("ABC\n123\n987");
@@ -26,7 +26,14 @@ public class Test {
 		s.insert(d2);
 		s.insert(d3);
 		s.insert(d4);
-		OrderedMap.MapIterator<Description, String> it1 = s.iterator();
+		Iterator<Description> it1 = s.iterator();
+		Description d = null;
+		while(it1.hasNext()) {
+			d = it1.next();
+			System.out.println(d.toString());
+			System.out.println("Rows: " +d.countRows()+ "\n");
+		}
+		/*OrderedMap.MapIterator<Description, String> it1 = s.iterator();
 		Description d = null;
 		while(it1.hasNext()) {
 			d = it1.next();
@@ -36,7 +43,7 @@ public class Test {
 				System.out.println("lol: " + st);
 			System.out.println(d.toString());
 			System.out.println("Rows: " +d.countRows()+ "\n");
-		}
+		}*/
 		System.out.println("**************");
 		OrderedSet<Description> s2 = new OrderedSet<Description>();
 		s2.insert(d2);
@@ -54,22 +61,49 @@ public class Test {
 		//2.)
 		System.out.println("2.)\n**OrderedMap**");
 		OrderedMap<MeanElapsedTime, CompositeTime> m = new OrderedMap<MeanElapsedTime, CompositeTime>();
-		//...
+		MeanElapsedTime e1 = new MeanElapsedTime();
+		MeanElapsedTime e2 = new MeanElapsedTime();
+		e1.addTime(3.98);
+		e1.addTime(5.03);
+		e1.addTime(0.01);
+		e1.addTime(8.99);
+		e2.addTime(1.03);
+		e2.addTime(65.4);
+		e2.addTime(7.28);
+		e2.addTime(9.14);
+		
+		m.insert(e1);
+		m.insert(e2);
+		CompositeTime e3 = new CompositeTime(new Double[]{2.03, 4.5, 1.09, 7.8});
+		CompositeTime e4 = new CompositeTime(new Double[]{1.5, 3.01, 50.4, 80.0});
+		
+		OrderedMap.MapIterator<MeanElapsedTime, CompositeTime> it3 = m.iterator();
+		MeanElapsedTime e = null;
+		while(it3.hasNext()) {
+			e = it3.next();
+			OrderedMap.MapElementIterator<CompositeTime> w = it3.iterator();
+			w.add(e3);
+			System.out.println("MeanElapsedTime:");
+			System.out.print(e.toString());
+			System.out.println("maxval: " +e.getMaxValue()+ "\n");
+			for(CompositeTime ct : it3) {
+				System.out.println("CompositeTime:");
+				System.out.print(ct.toString());
+				System.out.println("minval: " +ct.getMinValue());
+			}
+			System.out.println();
+		}
+		
 		
 		//3.)
+		//OrderedSet<OrderedMap<MeanElapsedTime, CompositeTime>> set = new OrderedSet<OrderedMap<MeanElapsedTime, CompositeTime>>();
 		
+
 		
 		//4.)
-		/*System.out.println("**OrderedSet**");
-		OrderedSet<ElapsedTime> s3 = new OrderedSet<ElapsedTime>();
-		*/
-		
-		
-		
-		//5.)
-		System.out.println("+++++++++++++++\n++++++5.)++++++\n+++++++++++++++");
+		System.out.println("4.)");
 		OrderedSet<ElapsedTime> s4 = new OrderedSet<ElapsedTime>();
-		MeanElapsedTime e1 = new MeanElapsedTime();
+		/*MeanElapsedTime e1 = new MeanElapsedTime();
 		MeanElapsedTime e2 = new MeanElapsedTime();
 		CompositeTime e3 = new CompositeTime(new Double[]{2.03, 4.5, 1.09, 7.8});
 		CompositeTime e4 = new CompositeTime(new Double[]{1.5, 3.01, 50.4, 80.0});
@@ -80,20 +114,20 @@ public class Test {
 		e2.addTime(1.03);
 		e2.addTime(65.4);
 		e2.addTime(7.28);
-		e2.addTime(9.14);
+		e2.addTime(9.14);*/
 		
 		
 		s4.insert(e1);
 		s4.insert(e2);
 		s4.insert(e3);
-		s4.insert(e4);
+		s4.insert(e4); 
 		
 		Iterator<ElapsedTime> it = s4.iterator();
-		ElapsedTime e = null;
+		ElapsedTime et = null;
 		while(it.hasNext()) {
-			e = it.next();
-			System.out.println(e);
-			System.out.println("size     = " + e.count());
+			et = it.next();
+			System.out.println(et);
+			System.out.println("size     = " + et.count());
 		}
 	}
 
