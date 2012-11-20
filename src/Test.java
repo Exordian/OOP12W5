@@ -70,18 +70,18 @@ public class Test {
 		//5.)
 		System.out.println("+++++++++++++++\n++++++5.)++++++\n+++++++++++++++");
 		OrderedSet<ElapsedTime> s4 = new OrderedSet<ElapsedTime>();
-		ElapsedTime e1 = new MeanElapsedTime();
-		ElapsedTime e2 = new MeanElapsedTime();
-		ElapsedTime e3 = new CompositeTime(new Double[]{2.03, 4.5, 1.09, 7.8});
-		ElapsedTime e4 = new CompositeTime(new Double[]{1.5, 3.01, 50.4, 80.0});
-		((MeanElapsedTime)e1).addTime(3.98);
-		((MeanElapsedTime)e1).addTime(5.03);
-		((MeanElapsedTime)e1).addTime(0.01);
-		((MeanElapsedTime)e1).addTime(8.99);
-		((MeanElapsedTime)e2).addTime(1.03);
-		((MeanElapsedTime)e2).addTime(65.4);
-		((MeanElapsedTime)e2).addTime(7.28);
-		((MeanElapsedTime)e2).addTime(9.14);
+		MeanElapsedTime e1 = new MeanElapsedTime();
+		MeanElapsedTime e2 = new MeanElapsedTime();
+		CompositeTime e3 = new CompositeTime(new Double[]{2.03, 4.5, 1.09, 7.8});
+		CompositeTime e4 = new CompositeTime(new Double[]{1.5, 3.01, 50.4, 80.0});
+		e1.addTime(3.98);
+		e1.addTime(5.03);
+		e1.addTime(0.01);
+		e1.addTime(8.99);
+		e2.addTime(1.03);
+		e2.addTime(65.4);
+		e2.addTime(7.28);
+		e2.addTime(9.14);
 		
 		s4.insert(e1);
 		s4.insert(e2);

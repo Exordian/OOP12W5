@@ -7,7 +7,7 @@
  * 
  */
 
-public class OrderedSet<T extends Shorter<T>>extends Set<T> implements Iterable<T> {
+public class OrderedSet<T extends Shorter<? super T>>extends Set<T> implements Iterable<T> {
 
 	@Override
 	public void insert (T i) {

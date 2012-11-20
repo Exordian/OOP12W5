@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
-public class OrderedMap<K extends Shorter<K>, V> extends OrderedSet<K> {
+public class OrderedMap<K extends Shorter<? super K>, V> extends OrderedSet<K> {
 	Node<K,V> root;
 		
 	@Override
@@ -90,7 +90,7 @@ public class OrderedMap<K extends Shorter<K>, V> extends OrderedSet<K> {
 		}
 	}
 	
-	public static class MapIterator<K extends Shorter<K>, V> implements Iterator<K>, Iterable<V>{
+	public static class MapIterator<K extends Shorter<? super K>, V> implements Iterator<K>, Iterable<V>{
 		OrderedMap<K, V> map;
 		Node<K, V> current;
 		
