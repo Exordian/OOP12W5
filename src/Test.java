@@ -52,10 +52,9 @@ public class Test {
 		System.out.println();
 		
 		//2.)
-		/*System.out.println("2.)\n**OrderedMap**");
+		System.out.println("2.)\n**OrderedMap**");
 		OrderedMap<MeanElapsedTime, CompositeTime> m = new OrderedMap<MeanElapsedTime, CompositeTime>();
 		//...
-		*/
 		
 		//3.)
 		
@@ -83,6 +82,7 @@ public class Test {
 		e2.addTime(7.28);
 		e2.addTime(9.14);
 		
+		
 		s4.insert(e1);
 		s4.insert(e2);
 		s4.insert(e3);
@@ -92,20 +92,9 @@ public class Test {
 		ElapsedTime e = null;
 		while(it.hasNext()) {
 			e = it.next();
-			if(e instanceof MeanElapsedTime) {
-				System.out.println(((MeanElapsedTime)e).toString());
-				System.out.println("maxvalue = " +((MeanElapsedTime)e).getMaxValue());
-				System.out.println("size     = " +((MeanElapsedTime)e).count());
-				System.out.println("-----");
-			}
-			else if(e instanceof CompositeTime) {
-				System.out.println(((CompositeTime)e).toString());
-				System.out.println("minvalue = " +((CompositeTime)e).getMinValue());
-				System.out.println("size     = " +((CompositeTime)e).count());
-				System.out.println("-----");
-			}
+			System.out.println(e);
+			System.out.println("size     = " + e.count());
 		}
-
 	}
 
 }
