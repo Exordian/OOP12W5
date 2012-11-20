@@ -48,13 +48,21 @@ public class MeanElapsedTime extends ElapsedTime {
 			return null;
 		}*/
 		double maxval = 0;
-		for(double t : s) {
+		for(double t : this.s) {
 			if(t > maxval) {
 				maxval = t;
 			}
 		}
 		return maxval;
 		//returns maximum value of set s
+	}
+	
+	public String toString() {
+		String output = "times:\n";
+		for(double d : this.s) {
+			output += d +"\n";
+		}
+		return output;
 	}
 
 }

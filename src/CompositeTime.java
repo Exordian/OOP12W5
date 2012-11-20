@@ -42,5 +42,13 @@ public class CompositeTime extends ElapsedTime {
 	public int count() {
 		return times.length;
 	}
+	
+	public String toString() {
+		String output = "times:\n";
+		for(int i = 0; i < this.times.length; i++) {
+			output += this.times[i] +"\n";
+		}
+		return output;
+	}
 
 }

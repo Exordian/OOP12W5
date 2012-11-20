@@ -1,3 +1,6 @@
+import java.util.Scanner;
+
+
 
 /**
  *
@@ -13,7 +16,7 @@ public class Description implements Shorter<Description> {
 		this.text = text;
 	}
 	
-	@Override
+	//@Override
 	public boolean shorter(Description s) {
 		if(s.toString().length() > text.length())
 			return true;
@@ -24,6 +27,17 @@ public class Description implements Shorter<Description> {
 	
 	public String toString() {
 		return text;
+	}
+	
+	public int countRows() {
+		int count = 0;
+		Scanner sc = new Scanner(this.text);
+		while(sc.hasNextLine()) {
+			sc.nextLine();
+			count++;
+		}
+		return count;
+		//returns number of lines
 	}
 
 }
