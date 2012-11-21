@@ -5,7 +5,7 @@
  * @since November 2012
  * 
  */
-public abstract class ElapsedTime implements Shorter<ElapsedTime> { // TODO: evtl muss elapsedTime ersetzt werden damit in den erbenden klassen shorter sinnvoll genutzt werden kann
+public abstract class ElapsedTime implements Shorter<ElapsedTime> { 
 	
 	protected double time = 0;
 	
@@ -23,6 +23,6 @@ public abstract class ElapsedTime implements Shorter<ElapsedTime> { // TODO: evt
 			return true;
 		return false;
 	}
-    // TODO: muessen wir die klasse irgendwann instanziieren? wenn ja muss abstract weg
+    
 	public abstract int count();
 }
