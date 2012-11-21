@@ -6,7 +6,6 @@
  * 
  */
 public abstract class ElapsedTime implements Shorter<ElapsedTime> { 
-	
 	protected double time = 0;
 	
 	protected void setTime(double time) {

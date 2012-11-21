@@ -47,7 +47,6 @@ public class Test {
 		}
 		System.out.println();
 		
-		
 		//2.)
 		System.out.println("2.)\n");
 		OrderedMap<MeanElapsedTime, CompositeTime> m = new OrderedMap<MeanElapsedTime, CompositeTime>();
@@ -103,7 +102,6 @@ public class Test {
 			}
 			System.out.println();
 		}
-			
 		
 		//3.)
 		System.out.println("3.)");
@@ -123,7 +121,6 @@ public class Test {
 			System.out.println("maxval: " +e.getMaxValue());
 		}
 		System.out.println();
-
 		
 		//4.)
 		System.out.println("4.)");
@@ -143,5 +140,4 @@ public class Test {
 			System.out.println();
 		}
 	}
-
 }

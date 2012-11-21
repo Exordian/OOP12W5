@@ -6,7 +6,6 @@
  * 
  */
 public class MeanElapsedTime extends ElapsedTime {
-
 	private Set<Double> s;
 	
 	public MeanElapsedTime () {
@@ -64,5 +63,4 @@ public class MeanElapsedTime extends ElapsedTime {
 		return output;
 		//returns output string of times
 	}
-
 }

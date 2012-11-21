@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-
-
 /**
  *
  * @author Englisch (e1125164), Lenz (e1126963), Schuster (e1025700) 
@@ -9,7 +7,6 @@ import java.util.Scanner;
  * 
  */
 public class Description implements Shorter<Description> {
-
 	private String text;
 	
 	public Description(String text) {
@@ -38,8 +35,8 @@ public class Description implements Shorter<Description> {
 			sc.nextLine();
 			count++;
 		}
+		sc.close(); //schön?
 		return count;
 		//returns number of lines
 	}
-
 }

@@ -8,7 +8,6 @@ import java.util.NoSuchElementException;
 * 
 */
 public class Set<T> implements Iterable<T> {
-
 	protected Node<T> root = null;
 	protected int size = 0;
 	
@@ -138,7 +137,5 @@ public class Set<T> implements Iterable<T> {
 			s.size--;
 			//current element has been removed
 		}
-		
-	};
-
+	}
 }

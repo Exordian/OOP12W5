@@ -6,7 +6,6 @@
  * 
  */
 public class CompositeTime extends ElapsedTime {
-
 	private Double[] times;
 	
 	public CompositeTime (Double [] times) {
