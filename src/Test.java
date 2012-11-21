@@ -15,7 +15,7 @@ public class Test {
 	public static void main(String[] args) {
 		
 		//1.)
-		System.out.println("1.)\n**OrderedSet**");
+		System.out.println("1.)\n");
 		OrderedSet<Description> s = new OrderedSet<Description>();
 		Description d1 = new Description("abcdefg\nhijklmnop\nqrstuvw\nxyz");
 		Description d2 = new Description("111111111\n222222");
@@ -32,17 +32,7 @@ public class Test {
 			System.out.println(d.toString());
 			System.out.println("Rows: " +d.countRows()+ "\n");
 		}
-		/*OrderedMap.MapIterator<Description, String> it1 = s.iterator();
-		Description d = null;
-		while(it1.hasNext()) {
-			d = it1.next();
-			OrderedMap.MapElementIterator<String> wut = it1.iterator();
-			wut.add("wat");
-			for(String st : it1)
-				System.out.println("lol: " + st);
-			System.out.println(d.toString());
-			System.out.println("Rows: " +d.countRows()+ "\n");
-		}*/
+	
 		System.out.println("**************");
 		OrderedSet<Description> s2 = new OrderedSet<Description>();
 		s2.insert(d2);
@@ -57,8 +47,9 @@ public class Test {
 		}
 		System.out.println();
 		
+		
 		//2.)
-		System.out.println("2.)\n**OrderedMap**");
+		System.out.println("2.)\n");
 		OrderedMap<MeanElapsedTime, CompositeTime> m = new OrderedMap<MeanElapsedTime, CompositeTime>();
 		MeanElapsedTime e1 = new MeanElapsedTime();
 		MeanElapsedTime e2 = new MeanElapsedTime();
@@ -112,8 +103,7 @@ public class Test {
 			}
 			System.out.println();
 		}
-		
-		
+			
 		
 		//3.)
 		System.out.println("3.)");
@@ -138,20 +128,7 @@ public class Test {
 		//4.)
 		System.out.println("4.)");
 		OrderedSet<ElapsedTime> s4 = new OrderedSet<ElapsedTime>();
-		/*MeanElapsedTime e1 = new MeanElapsedTime();
-		MeanElapsedTime e2 = new MeanElapsedTime();
-		CompositeTime e3 = new CompositeTime(new Double[]{2.03, 4.5, 1.09, 7.8});
-		CompositeTime e4 = new CompositeTime(new Double[]{1.5, 3.01, 50.4, 80.0});
-		e1.addTime(3.98);
-		e1.addTime(5.03);
-		e1.addTime(0.01);
-		e1.addTime(8.99);
-		e2.addTime(1.03);
-		e2.addTime(65.4);
-		e2.addTime(7.28);
-		e2.addTime(9.14);*/
-		
-		
+				
 		s4.insert(e1);
 		s4.insert(e2);
 		s4.insert(e3);

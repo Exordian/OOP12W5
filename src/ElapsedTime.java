@@ -10,7 +10,7 @@ public abstract class ElapsedTime implements Shorter<ElapsedTime> {
 	protected double time = 0;
 	
 	protected void setTime(double time) {
-		//t >= 0;
+		//time >= 0;
 		this.time = time;
 	}
 	protected double getTime() {

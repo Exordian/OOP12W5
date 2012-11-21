@@ -12,11 +12,10 @@ public class MeanElapsedTime extends ElapsedTime {
 	public MeanElapsedTime () {
 		s = new Set<Double>();
 	}
-	
-	// TODO: insert times, count, shorter, method to get greatest value
+
 	
 	public boolean shorter(ElapsedTime e) {
-		//s != null; s.getTime() >= 0;
+		//e != null; times of set s >= 0;
 		double sum = 0;
 		double average = 0;
 		for(double t : this.s) {
@@ -63,6 +62,7 @@ public class MeanElapsedTime extends ElapsedTime {
 			output += d +"\n";
 		}
 		return output;
+		//returns output string of times
 	}
 
 }

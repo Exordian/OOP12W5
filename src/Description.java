@@ -13,11 +13,13 @@ public class Description implements Shorter<Description> {
 	private String text;
 	
 	public Description(String text) {
+		//text != null;
 		this.text = text;
 	}
 	
-	//@Override
+	@Override
 	public boolean shorter(Description s) {
+		//s != null;
 		if(s.toString().length() > text.length())
 			return true;
 		return false;

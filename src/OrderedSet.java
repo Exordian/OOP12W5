@@ -48,6 +48,7 @@ public class OrderedSet<T extends Shorter<? super T>>extends Set<T> implements I
 			cur.getNext().setPrev(temp);
 		
 		size++;
+		//element i has been added;
 	}
 }
 

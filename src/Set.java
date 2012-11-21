@@ -29,7 +29,7 @@ public class Set<T> implements Iterable<T> {
 		
 		Node<T> cur = root;
 		while(cur.getNext() != null) {
-			if(i == cur.getElement() ) // or equals?
+			if(i == cur.getElement() ) 
 				return;
 			cur = cur.getNext();
 		}
@@ -44,12 +44,14 @@ public class Set<T> implements Iterable<T> {
 	}
 	
 	protected boolean contains(T i) {
-		
+		//i != null;
 		for(T x : this) {
 			if(x == i)
 				return true;
 		}
 		return false;
+		//returns: true if element is in set
+		//         else false
 			
 	}
 
@@ -93,6 +95,7 @@ public class Set<T> implements Iterable<T> {
 		Set<K> s;
 		
 		public SetIterator(Set<K> s) {
+			//s != null;
 			this.s = s;
 		}
 		
@@ -115,6 +118,7 @@ public class Set<T> implements Iterable<T> {
 			else
 				current = current.getNext();
 			return current.getElement();
+			//returns next element
 		}
 
 		@Override
@@ -132,6 +136,7 @@ public class Set<T> implements Iterable<T> {
 				s.root = current.getNext();
 			
 			s.size--;
+			//current element has been removed
 		}
 		
 	};
